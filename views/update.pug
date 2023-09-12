@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head 
+        title Update vehicle info
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h3
+            a(href='/') Return to the homepage 
+            .form-wrapper
+                form(method="POST")
+                    p Vehicle Name: #{vehicle_name}
+                    label(for="nameNewVal") New Vehicle Name:
+                    input(type="text" name="nameNewVal" value=vehicle_name required)
+
+                    p Vehicle Color: #{vehicle_color}                     
+                    label(for="colorNewVal") New Vehicle Color:
+                    input(type="text" name="colorNewVal" value=vehicle_color required)
+
+                    p Vehicle Model: #{vehicle_model}                    
+                    label(for="modelNewVal") New Vehicle Model:
+                    input(type="text" name="modelNewVal" value=vehicle_model required)
+
+                    input(type="submit" value="Submit")
+
+
+            
+
+                        

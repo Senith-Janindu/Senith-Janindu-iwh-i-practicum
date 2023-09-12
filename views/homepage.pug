@@ -1,0 +1,37 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Update table
+            table(style='width:75%; margin:auto', border='2', )
+                    tr
+                        th Vehicle Name
+                        th Vehicle Color
+                        th Vehicle Model
+                        th Actions
+                    each vehicle in vehicleData
+                        tr
+                            td #{vehicle.properties.vehicle_name}
+                            td #{vehicle.properties.vehicle_color}
+                            td #{vehicle.properties.vehicle_model}
+                            td
+                                a(href=`http://localhost:3000/update?hs_object_id=${vehicle.id}`) View
+
+        h1 Add Property
+            .form-wrapper
+                form(method="POST")
+                    p Vehicle Name:
+                    input(type="text" name="nameNewVal" required)
+
+                    p Vehicle Color:                    
+                    input(type="text" name="colorNewVal" required)
+
+                    p Vehicle Model:                   
+                    input(type="text" name="modelNewVal" required)
+
+                    input(type="submit" value="Submit")
+        
+                
